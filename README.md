@@ -1,27 +1,44 @@
-<p>
-  <img width="100%" src="https://assets.solidjs.com/banner?type=solid-portabletext&background=tiles&project=%20" alt="solid-portabletext">
-</p>
+# @portabletext/solid
 
-# solid-portabletext
+[![npm version](https://img.shields.io/npm/v/@portabletext/solid.svg?style=flat-square)](https://www.npmjs.com/package/@portabletext/solid)[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@portabletext/solid?style=flat-square)](https://bundlephobia.com/result?p=@portabletext/solid)
 
-[![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-cc00ff.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
+Render [Portable Text](https://portabletext.org/) with Solid JS.
 
-Render Portable Text with Solid JS
+## Table of contents
 
-## Quick start
+- [Installation](#installation)
+- [Basic usage](#basic-usage)
 
-Install it:
+## Installation
 
-```bash
-npm i solid-portabletext
-# or
-yarn add solid-portabletext
-# or
-pnpm add solid-portabletext
+```
+npm install --save @portabletext/solid
 ```
 
-Use it:
+## Basic usage
 
 ```tsx
-import solid-portabletext from 'solid-portabletext'
+import { PortableText, type PortableTextComponents } from '@portabletext/solid'
+import type { PortableTextBlock } from '@portabletext/types'
+import type { Component } from 'solid-js'
+
+const blocks: PortableTextBlock[] = [
+  /* array of portable text blocks */
+]
+
+const components: PortableTextComponents = {
+  /* optional object of custom components to use */
+}
+
+const App: Component = () => {
+  return <PortableText value={blocks} components={components} />
+}
 ```
+
+## Credits
+
+This repository is based on [`solid-portabletext`](https://github.com/nonphoto/solid-portabletext/tree/main), shoutout to @nonphoto for the original work 💖
+
+## License
+
+MIT

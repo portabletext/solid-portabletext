@@ -1,22 +1,20 @@
 {
-  "version": "0.0.1",
-  "name": "solid-portabletext",
+  "version": "0.0.0",
+  "name": "@portabletext/solid",
   "description": "Render Portable Text with Solid JS",
   "license": "MIT",
   "author": "nonphoto",
-  "contributors": [],
+  "homepage": "https://github.com/portabletext/solid-portabletext#readme",
+  "bugs": {
+    "url": "https://github.com/portabletext/solid-portabletext/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nonphoto/solid-portabletext.git"
-  },
-  "homepage": "https://github.com/nonphoto/solid-portabletext#readme",
-  "bugs": {
-    "url": "https://github.com/nonphoto/solid-portabletext/issues"
+    "url": "git+ssh://git@github.com/portabletext/solid-portabletext.git"
   },
   "files": [
     "dist"
   ],
-  "private": false,
   "sideEffects": false,
   "type": "module",
   "main": "./dist/index.cjs",
@@ -49,25 +47,37 @@
     "test:client": "vitest",
     "test:ssr": "pnpm run test:client --mode ssr",
     "prepublishOnly": "pnpm build",
-    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "format": "prettier --write --cache --ignore-unknown .",
     "update-deps": "pnpm up -Li",
-    "typecheck": "tsc --noEmit",
-    "publish-packages": "pnpm test && pnpm prepublishOnly && changeset version && changeset publish && git push --follow-tags"
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-packagejson"
+    ],
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "arrowParens": "avoid",
+    "bracketSpacing": true
   },
   "peerDependencies": {
     "solid-js": "^1.6.0"
   },
   "dependencies": {
-    "@portabletext/toolkit": "^2.0.1"
+    "@portabletext/toolkit": "^2.0.8",
+    "@portabletext/types": "^2.0.7"
   },
   "devDependencies": {
-    "@changesets/cli": "2.26.1",
-    "@portabletext/types": "2.0.2",
     "concurrently": "^7.6.0",
     "esbuild": "^0.17.4",
     "esbuild-plugin-solid": "^0.5.0",
     "jsdom": "^21.1.0",
-    "prettier": "2.8.3",
+    "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.6",
     "solid-js": "^1.6.9",
     "tsup": "^6.5.0",
     "tsup-preset-solid": "^0.1.4",
@@ -79,5 +89,8 @@
   "keywords": [
     "solid"
   ],
-  "packageManager": "pnpm@7.22.0"
+  "packageManager": "pnpm@8.8.0",
+  "publishConfig": {
+    "access": "public"
+  }
 }
