@@ -75,7 +75,7 @@
     "concurrently": "^7.6.0",
     "esbuild": "^0.19.4",
     "esbuild-plugin-solid": "^0.5.0",
-    "jsdom": "^21.1.2",
+    "jsdom": "^22.1.0",
     "prettier": "^3.0.3",
     "prettier-plugin-packagejson": "^2.4.6",
     "solid-js": "^1.7.12",
