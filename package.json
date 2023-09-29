@@ -1,9 +1,10 @@
 {
-  "version": "0.0.0",
   "name": "@portabletext/solid",
+  "version": "0.0.0",
   "description": "Render Portable Text with Solid JS",
-  "license": "MIT",
-  "author": "nonphoto",
+  "keywords": [
+    "solid"
+  ],
   "homepage": "https://github.com/portabletext/solid-portabletext#readme",
   "bugs": {
     "url": "https://github.com/portabletext/solid-portabletext/issues"
@@ -12,15 +13,10 @@
     "type": "git",
     "url": "git+ssh://git@github.com/portabletext/solid-portabletext.git"
   },
-  "files": [
-    "dist"
-  ],
+  "license": "MIT",
+  "author": "nonphoto",
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "browser": {},
   "exports": {
     "solid": {
       "development": "./dist/dev.jsx",
@@ -39,33 +35,37 @@
     },
     "require": "./dist/index.cjs"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "browser": {},
+  "types": "./dist/index.d.ts",
   "typesVersions": {},
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite serve dev",
     "build": "tsup",
+    "dev": "vite serve dev",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "prepublishOnly": "pnpm build",
     "test": "concurrently pnpm:test:*",
     "test:client": "vitest",
     "test:ssr": "pnpm run test:client --mode ssr",
-    "prepublishOnly": "pnpm build",
-    "format": "prettier --write --cache --ignore-unknown .",
-    "update-deps": "pnpm up -Li",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "update-deps": "pnpm up -Li"
   },
   "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
     "plugins": [
       "prettier-plugin-packagejson"
     ],
-    "trailingComma": "all",
-    "tabWidth": 2,
     "printWidth": 100,
     "semi": false,
     "singleQuote": true,
-    "useTabs": false,
-    "arrowParens": "avoid",
-    "bracketSpacing": true
-  },
-  "peerDependencies": {
-    "solid-js": "^1.6.0"
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
   },
   "dependencies": {
     "@portabletext/toolkit": "^2.0.9",
@@ -86,9 +86,9 @@
     "vite-plugin-solid": "^2.5.0",
     "vitest": "^0.28.2"
   },
-  "keywords": [
-    "solid"
-  ],
+  "peerDependencies": {
+    "solid-js": "^1.6.0"
+  },
   "packageManager": "pnpm@8.8.0",
   "publishConfig": {
     "access": "public"
