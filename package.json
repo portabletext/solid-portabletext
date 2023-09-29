@@ -80,7 +80,7 @@
     "prettier-plugin-packagejson": "^2.4.6",
     "solid-js": "^1.7.12",
     "tsup": "^7.2.0",
-    "tsup-preset-solid": "^0.1.8",
+    "tsup-preset-solid": "^1.0.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vite-plugin-solid": "^2.7.0",
