@@ -73,18 +73,18 @@
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
-    "esbuild": "^0.17.4",
+    "esbuild": "^0.19.4",
     "esbuild-plugin-solid": "^0.5.0",
-    "jsdom": "^21.1.0",
+    "jsdom": "^21.1.2",
     "prettier": "^3.0.3",
     "prettier-plugin-packagejson": "^2.4.6",
-    "solid-js": "^1.6.9",
-    "tsup": "^6.5.0",
-    "tsup-preset-solid": "^0.1.4",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.4",
-    "vite-plugin-solid": "^2.5.0",
-    "vitest": "^0.28.2"
+    "solid-js": "^1.7.12",
+    "tsup": "^6.7.0",
+    "tsup-preset-solid": "^0.1.8",
+    "typescript": "^4.9.5",
+    "vite": "^4.4.9",
+    "vite-plugin-solid": "^2.7.0",
+    "vitest": "^0.34.6"
   },
   "peerDependencies": {
     "solid-js": "^1.6.0"
