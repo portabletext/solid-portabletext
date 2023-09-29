@@ -37,7 +37,7 @@ const App: Component = () => {
 
 ## Credits
 
-This repository is based on [`solid-portabletext`](https://github.com/nonphoto/solid-portabletext/tree/main), shoutout to @nonphoto for the original work 💖
+This repository is based on [`solid-portabletext`](https://github.com/nonphoto/solid-portabletext/tree/main), shoutout to [@nonphoto](https://github.com/nonphoto) for the original work 💖
 
 ## License
 
