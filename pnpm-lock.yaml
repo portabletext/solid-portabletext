@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^7.2.0
     version: 7.2.0(typescript@5.2.2)
   tsup-preset-solid:
-    specifier: ^1.0.0
-    version: 1.0.0(esbuild@0.19.4)(solid-js@1.8.0)(tsup@7.2.0)
+    specifier: ^2.2.0
+    version: 2.2.0(esbuild@0.19.4)(solid-js@1.8.0)(tsup@7.2.0)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -960,6 +960,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: true
 
   /acorn-walk@8.2.0:
@@ -1354,6 +1355,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: true
@@ -1856,6 +1858,7 @@ packages:
 
   /loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
+    deprecated: Please upgrade to 2.3.7 which fixes GHSA-4q6p-r6v2-jvc5
     dependencies:
       get-func-name: 2.0.2
     dev: true
@@ -2485,14 +2488,13 @@ packages:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
-  /tsup-preset-solid@1.0.0(esbuild@0.19.4)(solid-js@1.8.0)(tsup@7.2.0):
-    resolution: {integrity: sha512-2BqfcQPWXMWDm72QN762gJ2qGqWXArAsyimiJcEyIi5KqXURFiPWoNstS88+Ngjw6MLfKlCy6ahzBKjHCRvGMA==}
+  /tsup-preset-solid@2.2.0(esbuild@0.19.4)(solid-js@1.8.0)(tsup@7.2.0):
+    resolution: {integrity: sha512-sPAzeArmYkVAZNRN+m4tkiojdd0GzW/lCwd4+TQDKMENe8wr2uAuro1s0Z59ASmdBbkXoxLgCiNcuQMyiidMZg==}
     peerDependencies:
-      tsup: ^7.0.0
+      tsup: ^8.0.0
     dependencies:
       esbuild-plugin-solid: 0.5.0(esbuild@0.19.4)(solid-js@1.8.0)
       tsup: 7.2.0(typescript@5.2.2)
-      type-fest: 4.3.2
     transitivePeerDependencies:
       - esbuild
       - solid-js
@@ -2538,11 +2540,6 @@ packages:
   /type-detect@4.0.8:
     resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
     engines: {node: '>=4'}
-    dev: true
-
-  /type-fest@4.3.2:
-    resolution: {integrity: sha512-VpwuOgnTsQUUWi0id8Hl4/xiQ+OoaeJGe8dnFjzubJYe/lOc2/d1Qx/d3FqWR0FlpOG/cvukAXfB12A49Y4iiA==}
-    engines: {node: '>=16'}
     dev: true
 
   /typescript@5.2.2:
