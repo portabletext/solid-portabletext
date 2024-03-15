@@ -72,18 +72,18 @@
     "@portabletext/types": "^2.0.8"
   },
   "devDependencies": {
-    "concurrently": "^8.2.1",
-    "esbuild": "^0.19.4",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.20.2",
     "esbuild-plugin-solid": "^0.5.0",
     "jsdom": "^22.1.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-packagejson": "^2.4.6",
-    "solid-js": "^1.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.4.12",
+    "solid-js": "^1.8.15",
     "tsup": "^7.2.0",
     "tsup-preset-solid": "^1.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.11",
-    "vite-plugin-solid": "^2.7.0",
+    "typescript": "^5.4.2",
+    "vite": "^4.5.2",
+    "vite-plugin-solid": "^2.10.2",
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
