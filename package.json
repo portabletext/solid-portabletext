@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "@portabletext/toolkit": "^2.0.12",
-    "@portabletext/types": "^2.0.10"
+    "@portabletext/types": "^2.0.12"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
