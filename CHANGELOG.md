@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/portabletext/solid-portabletext/compare/v1.0.5...v1.0.6) (2024-04-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @portabletext/toolkit to ^2.0.15 ([#50](https://github.com/portabletext/solid-portabletext/issues/50)) ([e6d0421](https://github.com/portabletext/solid-portabletext/commit/e6d0421d6877ab9cec1cba5a233c1cfdfe21d0fd))
+* **deps:** update dependency @portabletext/types to ^2.0.13 ([#48](https://github.com/portabletext/solid-portabletext/issues/48)) ([e1a24b3](https://github.com/portabletext/solid-portabletext/commit/e1a24b315437d898718fc574efeb0cb8ab8e8ce0))
+
 ## [1.0.5](https://github.com/portabletext/solid-portabletext/compare/v1.0.4...v1.0.5) (2024-04-05)
 
 
