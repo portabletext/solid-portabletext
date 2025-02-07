@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/portabletext/solid-portabletext/compare/v1.0.6...v1.0.7) (2025-02-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @portabletext/toolkit to ^2.0.17 ([#54](https://github.com/portabletext/solid-portabletext/issues/54)) ([4e6d78f](https://github.com/portabletext/solid-portabletext/commit/4e6d78f941ae4d3cf132ea52d0f7c614092bc4f8))
+
 ## [1.0.6](https://github.com/portabletext/solid-portabletext/compare/v1.0.5...v1.0.6) (2024-04-11)
 
 

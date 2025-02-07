@@ -1,6 +1,6 @@
 {
   "name": "@portabletext/solid",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Render Portable Text with Solid JS",
   "keywords": [
     "solid"
