@@ -1,4 +1,4 @@
-# Changelog
+# @portabletext/solid
 
 ## [1.0.7](https://github.com/portabletext/solid-portabletext/compare/v1.0.6...v1.0.7) (2025-02-07)
 
