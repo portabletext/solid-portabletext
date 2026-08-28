@@ -172,6 +172,14 @@ function ListItem(props: {
 
   const marksTree = createMemo(() => buildMarksTree(props.node))
 
+  // Wrap any other style in whatever the block serializer says to use.
+  // `listItem` is stripped so the node renders as a block instead of
+  // recursing back into this list item.
+  const styledBlock = createMemo(() => {
+    const { listItem: _listItem, ...blockNode } = props.node
+    return blockNode
+  })
+
   return (
     <Dynamic
       component={component()}
@@ -190,7 +198,7 @@ function ListItem(props: {
           </For>
         }
       >
-        <Node node={props.node} index={props.index} isInline={false} renderNode={Node} />
+        <Node node={styledBlock()} index={props.index} isInline={false} renderNode={Node} />
       </Show>
     </Dynamic>
   )
