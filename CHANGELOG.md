@@ -1,5 +1,13 @@
 # @portabletext/solid
 
+## 1.0.9
+
+### Patch Changes
+
+- [#71](https://github.com/portabletext/solid-portabletext/pull/71) [`94daf64`](https://github.com/portabletext/solid-portabletext/commit/94daf64bb23279858214cf7273fd71b20bb00c96) Thanks [@stipsan](https://github.com/stipsan)! - Update dependencies: `@portabletext/toolkit` to `^2.0.18` and `@portabletext/types` to `^2.0.15`
+
+- [#71](https://github.com/portabletext/solid-portabletext/pull/71) [`94daf64`](https://github.com/portabletext/solid-portabletext/commit/94daf64bb23279858214cf7273fd71b20bb00c96) Thanks [@stipsan](https://github.com/stipsan)! - Fix custom block styles on list items crashing with a stack overflow. List items with a style other than `normal` now render through the matching `components.block` style component, like `@portabletext/react`.
+
 ## 1.0.8
 
 ### Patch Changes
