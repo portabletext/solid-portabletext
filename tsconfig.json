@@ -2,9 +2,9 @@
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "Preserve",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "noEmit": true,
@@ -15,8 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": [],
-    "baseUrl": "."
+    "types": []
   },
   "exclude": ["node_modules", "dist", "./dev"]
 }

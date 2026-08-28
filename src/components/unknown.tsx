@@ -1,4 +1,5 @@
 import { Show } from 'solid-js'
+
 import type { PortableTextSolidComponents } from '../types'
 import { unknownTypeWarning } from '../warnings'
 

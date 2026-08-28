@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest'
 import { renderToString } from 'solid-js/web'
+import { describe, expect, test } from 'vitest'
+
 import { PortableText } from '../src'
 import type { PortableTextProps } from '../src'
 import {

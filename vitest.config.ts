@@ -1,5 +1,6 @@
-import { defineConfig } from 'vitest/config'
+import { defaultClientConditions, defaultServerConditions } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig(({ mode }) => {
   // to test in server environment, run with "--mode ssr" or "--mode test:ssr" flag
@@ -25,7 +26,7 @@ export default defineConfig(({ mode }) => {
         PROD: testSSR ? '1' : '',
       },
       environment: testSSR ? 'node' : 'jsdom',
-      transformMode: { web: [/\.[jt]sx$/] },
+      testTransformMode: { web: [/\.[jt]sx$/] },
       ...(testSSR
         ? {
             include: ['test/server.test.{ts,tsx}'],
@@ -36,7 +37,9 @@ export default defineConfig(({ mode }) => {
           }),
     },
     resolve: {
-      conditions: testSSR ? ['node'] : ['browser', 'development'],
+      conditions: testSSR
+        ? ['node', ...defaultServerConditions]
+        : ['browser', 'development', ...defaultClientConditions],
     },
   }
 })

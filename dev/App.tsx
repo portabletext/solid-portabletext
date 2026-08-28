@@ -1,15 +1,16 @@
 import type { Component } from 'solid-js'
+
 import { PortableText, PortableTextComponents } from '../src'
-import { blocks } from './fixture'
+import AnnotatedMap from './components/AnnotatedMap'
+import CharacterReference from './components/CharacterReference'
 import Code from './components/Code'
 import CurrencyAmount from './components/CurrencyAmount'
-import AnnotatedMap from './components/AnnotatedMap'
+import Link from './components/Link'
 import LinkableHeader from './components/LinkableHeadert'
 import SchnauzerList from './components/SchnauzerList'
-import Link from './components/Link'
-import CharacterReference from './components/CharacterReference'
 import { hasSpeechApi, SpeechSynthesis } from './components/SpeechSynthesis'
 import TermDefinition from './components/TermDefinition'
+import { blocks } from './fixture'
 
 const components: PortableTextComponents = {
   // Components for totally custom types outside the scope of Portable Text

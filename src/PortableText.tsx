@@ -1,14 +1,4 @@
 import {
-  createMemo,
-  For,
-  Switch,
-  createEffect,
-  Match,
-  createContext,
-  useContext,
-  Show,
-} from 'solid-js'
-import {
   buildMarksTree,
   isPortableTextListItemBlock,
   isPortableTextToolkitList,
@@ -19,6 +9,22 @@ import {
   ToolkitNestedPortableTextSpan,
   ToolkitTextNode,
 } from '@portabletext/toolkit'
+import { isPortableTextBlock, nestLists } from '@portabletext/toolkit'
+import type { PortableTextBlock, PortableTextListItemBlock, TypedObject } from '@portabletext/types'
+import {
+  createMemo,
+  For,
+  Switch,
+  createEffect,
+  Match,
+  createContext,
+  useContext,
+  Show,
+} from 'solid-js'
+import { Dynamic } from 'solid-js/web'
+
+import { defaultComponents } from './components/defaults'
+import { mergeComponents } from './components/merge'
 import type {
   MissingComponentHandler,
   PortableTextProps,
@@ -26,16 +32,6 @@ import type {
   Serializable,
   SolidPortableTextList,
 } from './types'
-import { isPortableTextBlock, nestLists } from '@portabletext/toolkit'
-import type {
-  PortableTextBlock,
-  PortableTextListItemBlock,
-  PortableTextMarkDefinition,
-  PortableTextSpan,
-  TypedObject,
-} from '@portabletext/types'
-import { mergeComponents } from './components/merge'
-import { defaultComponents } from './components/defaults'
 import {
   printWarning,
   unknownBlockStyleWarning,
@@ -44,7 +40,6 @@ import {
   unknownMarkWarning,
   unknownTypeWarning,
 } from './warnings'
-import { Dynamic } from 'solid-js/web'
 
 function noop() {}
 
@@ -146,11 +141,7 @@ function Span(props: { node: ToolkitNestedPortableTextSpan; index: number; key: 
   )
 }
 
-function ListItem(props: {
-  node: PortableTextListItemBlock<PortableTextMarkDefinition, PortableTextSpan>
-  index: number
-  key: string
-}) {
+function ListItem(props: { node: PortableTextListItemBlock; index: number; key: string }) {
   const renderContext = useContext(RenderContext)
 
   const component = () => {
@@ -254,7 +245,7 @@ function Text(props: { node: ToolkitTextNode; key: string }) {
   return (
     <Show when={props.node.text === '\n'} fallback={props.node.text}>
       <Show when={hardBreak()} fallback="\n">
-        <Dynamic component={hardBreak()!} />
+        <Dynamic component={hardBreak()} />
       </Show>
     </Show>
   )

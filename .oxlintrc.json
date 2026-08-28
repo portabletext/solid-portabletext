@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": ["dist/**", "dev/dist/**"],
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "no-console": "error",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }],
+    // @TODO this rule should be enabled, and the `as` casts in merge.ts fixed
+    "no-unsafe-type-assertion": "off"
+  },
+  "overrides": [
+    {
+      "files": ["test/**", "dev/**"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

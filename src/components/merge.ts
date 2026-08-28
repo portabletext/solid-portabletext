@@ -29,16 +29,16 @@ function mergeDeeply(
     return override
   }
 
-  if (override && typeof parentVal === 'function') {
+  if (!override) {
+    return parentVal
+  }
+
+  if (typeof parentVal === 'function') {
     return override
   }
 
-  if (override) {
-    return {
-      ...parentVal,
-      ...override,
-    } as PortableTextSolidComponents[typeof key]
-  }
-
-  return parentVal
+  return {
+    ...parentVal,
+    ...override,
+  } as PortableTextSolidComponents[typeof key]
 }

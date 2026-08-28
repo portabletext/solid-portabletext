@@ -21,12 +21,10 @@ export default defineConfig(config => {
   if (!watching) {
     const package_fields = preset.generatePackageExports(parsed_options)
 
-    console.log(`package.json: \n\n${JSON.stringify(package_fields, null, 2)}\n\n`)
-
     /**
      * will update ./package.json with the correct export fields
      */
-    preset.writePackageJson(package_fields)
+    void preset.writePackageJson(package_fields)
   }
 
   return preset.generateTsupOptions(parsed_options)

@@ -1,4 +1,3 @@
-import type { Component, JSXElement } from 'solid-js'
 import type {
   ToolkitListNestMode,
   ToolkitPortableTextList,
@@ -12,6 +11,7 @@ import type {
   PortableTextListItemType,
   TypedObject,
 } from '@portabletext/types'
+import type { Component, JSXElement } from 'solid-js'
 
 /**
  * Properties for the Portable Text Solid component
@@ -156,7 +156,7 @@ export interface PortableTextSolidComponents {
    * Component to use for rendering "hard breaks", eg `\n` inside of text spans
    * Will by default render a `<br />`. Pass `false` to render as-is (`\n`)
    */
-  hardBreak: Component<{}> | false
+  hardBreak: Component | false
 
   /**
    * Solid component used when encountering a mark type there is no registered component for
