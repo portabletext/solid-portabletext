@@ -4,6 +4,8 @@
 
 Render [Portable Text](https://portabletext.org/) with Solid JS.
 
+[Demo](https://portabletext.github.io/solid-portabletext/)
+
 ## Table of contents
 
 - [Installation](#installation)
@@ -22,13 +24,9 @@ import { PortableText, type PortableTextComponents } from '@portabletext/solid'
 import type { PortableTextBlock } from '@portabletext/types'
 import type { Component } from 'solid-js'
 
-const blocks: PortableTextBlock[] = [
-  /* array of portable text blocks */
-]
+const blocks: PortableTextBlock[] = [/* array of portable text blocks */]
 
-const components: PortableTextComponents = {
-  /* optional object of custom components to use */
-}
+const components: PortableTextComponents = {/* optional object of custom components to use */}
 
 const App: Component = () => {
   return <PortableText value={blocks} components={components} />

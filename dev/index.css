@@ -1,11 +1,55 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: 1rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+code,
+pre {
+  font-family:
+    ui-monospace, SFMono-Regular, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+pre {
+  background: #f6f6f6;
+  border-radius: 4px;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.slug-anchor {
+  text-decoration: none;
+  opacity: 0.35;
+}
+
+.slug-anchor:hover {
+  opacity: 1;
+}
+
+.medium {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.annotated-map {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.annotated-map figcaption {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.annotated-map ul {
+  columns: 2;
+  padding-left: 1.25rem;
 }

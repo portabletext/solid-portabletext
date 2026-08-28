@@ -1,14 +1,4 @@
 import {
-  createMemo,
-  For,
-  Switch,
-  createEffect,
-  Match,
-  createContext,
-  useContext,
-  Show,
-} from 'solid-js'
-import {
   buildMarksTree,
   isPortableTextListItemBlock,
   isPortableTextToolkitList,
@@ -19,6 +9,22 @@ import {
   ToolkitNestedPortableTextSpan,
   ToolkitTextNode,
 } from '@portabletext/toolkit'
+import { isPortableTextBlock, nestLists } from '@portabletext/toolkit'
+import type { PortableTextBlock, PortableTextListItemBlock, TypedObject } from '@portabletext/types'
+import {
+  createMemo,
+  For,
+  Switch,
+  createEffect,
+  Match,
+  createContext,
+  useContext,
+  Show,
+} from 'solid-js'
+import { Dynamic } from 'solid-js/web'
+
+import { defaultComponents } from './components/defaults'
+import { mergeComponents } from './components/merge'
 import type {
   MissingComponentHandler,
   PortableTextProps,
@@ -26,16 +32,6 @@ import type {
   Serializable,
   SolidPortableTextList,
 } from './types'
-import { isPortableTextBlock, nestLists } from '@portabletext/toolkit'
-import type {
-  PortableTextBlock,
-  PortableTextListItemBlock,
-  PortableTextMarkDefinition,
-  PortableTextSpan,
-  TypedObject,
-} from '@portabletext/types'
-import { mergeComponents } from './components/merge'
-import { defaultComponents } from './components/defaults'
 import {
   printWarning,
   unknownBlockStyleWarning,
@@ -44,7 +40,6 @@ import {
   unknownMarkWarning,
   unknownTypeWarning,
 } from './warnings'
-import { Dynamic } from 'solid-js/web'
 
 function noop() {}
 
@@ -146,11 +141,7 @@ function Span(props: { node: ToolkitNestedPortableTextSpan; index: number; key: 
   )
 }
 
-function ListItem(props: {
-  node: PortableTextListItemBlock<PortableTextMarkDefinition, PortableTextSpan>
-  index: number
-  key: string
-}) {
+function ListItem(props: { node: PortableTextListItemBlock; index: number; key: string }) {
   const renderContext = useContext(RenderContext)
 
   const component = () => {
@@ -172,6 +163,14 @@ function ListItem(props: {
 
   const marksTree = createMemo(() => buildMarksTree(props.node))
 
+  // Wrap any other style in whatever the block serializer says to use.
+  // `listItem` is stripped so the node renders as a block instead of
+  // recursing back into this list item.
+  const styledBlock = createMemo(() => {
+    const { listItem: _listItem, ...blockNode } = props.node
+    return blockNode
+  })
+
   return (
     <Dynamic
       component={component()}
@@ -190,7 +189,7 @@ function ListItem(props: {
           </For>
         }
       >
-        <Node node={props.node} index={props.index} isInline={false} renderNode={Node} />
+        <Node node={styledBlock()} index={props.index} isInline={false} renderNode={Node} />
       </Show>
     </Dynamic>
   )
@@ -246,7 +245,7 @@ function Text(props: { node: ToolkitTextNode; key: string }) {
   return (
     <Show when={props.node.text === '\n'} fallback={props.node.text}>
       <Show when={hardBreak()} fallback="\n">
-        <Dynamic component={hardBreak()!} />
+        <Dynamic component={hardBreak()} />
       </Show>
     </Show>
   )
