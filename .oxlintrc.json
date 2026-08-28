@@ -11,7 +11,7 @@
     "no-underscore-dangle": "off",
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }],
-    // @TODO this rule should be enabled, and the `as` casts in merge.ts fixed
+    // @TODO this rule should be enabled, and the violations fixed
     "no-unsafe-type-assertion": "off"
   },
   "overrides": [
