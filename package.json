@@ -114,6 +114,7 @@
   },
   "scripts": {
     "build": "tsup",
+    "build:demo": "vite build dev --base=/solid-portabletext/",
     "dev": "vite serve dev",
     "format": "oxfmt .",
     "lint": "oxlint --type-aware --type-check --deny-warnings --report-unused-disable-directives",

@@ -4,6 +4,8 @@
 
 Render [Portable Text](https://portabletext.org/) with Solid JS.
 
+[Demo](https://portabletext.github.io/solid-portabletext/)
+
 ## Table of contents
 
 - [Installation](#installation)

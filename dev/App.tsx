@@ -6,7 +6,7 @@ import CharacterReference from './components/CharacterReference'
 import Code from './components/Code'
 import CurrencyAmount from './components/CurrencyAmount'
 import Link from './components/Link'
-import LinkableHeader from './components/LinkableHeadert'
+import LinkableHeader from './components/LinkableHeader'
 import SchnauzerList from './components/SchnauzerList'
 import { hasSpeechApi, SpeechSynthesis } from './components/SpeechSynthesis'
 import TermDefinition from './components/TermDefinition'
@@ -20,9 +20,11 @@ const components: PortableTextComponents = {
     annotatedMap: AnnotatedMap,
   },
 
-  // Overrides for specific block styles - in this case just the `h2` style
+  // Overrides for specific block styles - the `h2` style, and a custom
+  // `medium` style that also works on list items (https://github.com/portabletext/solid-portabletext/issues/56)
   block: {
     h2: LinkableHeader,
+    medium: props => <p class="medium">{props.children}</p>,
   },
 
   // Implements a custom component to handle the `schnauzer` list item type

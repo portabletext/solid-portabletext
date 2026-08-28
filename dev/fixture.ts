@@ -601,4 +601,58 @@ export const blocks: (PortableTextBlock | CodeBlock | AnnotatedMapBlock)[] = [
     listItem: 'schnauzer',
     children: [{ _type: 'span', text: 'Pippi' }],
   },
+  {
+    _type: 'block',
+    _key: 'styled-list-head',
+    style: 'h2',
+    markDefs: [],
+    children: [{ _type: 'span', text: 'Styled list items' }],
+  },
+  {
+    _type: 'block',
+    _key: 'styled-list-intro',
+    style: 'normal',
+    markDefs: [],
+    children: [
+      {
+        _type: 'span',
+        text: 'List items can use any block style - default ones like headings, or custom styles like the "medium" style on the last item below:',
+      },
+    ],
+  },
+  {
+    _type: 'block',
+    _key: 'styled-list-h3',
+    listItem: 'number',
+    level: 1,
+    style: 'h3',
+    markDefs: [],
+    children: [{ _type: 'span', text: 'First, pick a service and a time slot' }],
+  },
+  {
+    _type: 'block',
+    _key: 'styled-list-normal',
+    listItem: 'number',
+    level: 1,
+    style: 'normal',
+    markDefs: [],
+    children: [{ _type: 'span', text: 'Then tell us where to show up' }],
+  },
+  // The exact case from https://github.com/portabletext/solid-portabletext/issues/56
+  {
+    listItem: 'number',
+    markDefs: [],
+    children: [
+      {
+        _key: '45ec4de97f48',
+        _type: 'span',
+        marks: [],
+        text: 'Finally, enter your contact information and review your service appointment. You’re all set!',
+      },
+    ],
+    level: 1,
+    _type: 'block',
+    style: 'medium',
+    _key: '2d7d1c82304f',
+  },
 ]
