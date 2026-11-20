@@ -3,6 +3,7 @@
   "version": "1.0.9",
   "description": "Render Portable Text with Solid JS",
   "keywords": [
+    "portable-text",
     "solid"
   ],
   "homepage": "https://github.com/portabletext/solid-portabletext#readme",
