@@ -27,16 +27,16 @@ const snapshot: Record<string, CurrencySnapshotValue> = {
   SE: { flag: '🇸🇪', currency: 'SEK', rate: 9.030481 },
 }
 
-const CurrencyAmount: PortableTextTypeComponent<CurrencyAmountBlock> = props => {
-  const currency = () => {
-    const hasLanguages = typeof navigator !== 'undefined' && Array.isArray(navigator.languages)
-    const languages: readonly string[] = hasLanguages ? navigator.languages : ['es']
-    const withCurrency = languages
-      .map(code => code.split('-').pop()!.toUpperCase())
-      .find(lang => lang in snapshot)
-    return withCurrency ? snapshot[withCurrency] : undefined
-  }
+function currency(): CurrencySnapshotValue | undefined {
+  const hasLanguages = typeof navigator !== 'undefined' && Array.isArray(navigator.languages)
+  const languages: readonly string[] = hasLanguages ? navigator.languages : ['es']
+  const withCurrency = languages
+    .map(code => code.split('-').pop()!.toUpperCase())
+    .find(lang => lang in snapshot)
+  return withCurrency ? snapshot[withCurrency] : undefined
+}
 
+const CurrencyAmount: PortableTextTypeComponent<CurrencyAmountBlock> = props => {
   return (
     <>
       {props.value.amount} {props.value.currency}{' '}

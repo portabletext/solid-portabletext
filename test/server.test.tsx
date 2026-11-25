@@ -7,9 +7,12 @@ import {
   basicParagraph,
   customStyledListItem,
   customStyledListItemOutput,
+  linkParagraph,
   normalListItems,
+  safeHrefs,
   styledListItems,
   styledListItemsOutput,
+  unsafeHrefs,
 } from './fixtures'
 
 function renderToHtml(props: PortableTextProps): string {
@@ -42,5 +45,13 @@ describe('server-side rendering', () => {
         },
       }),
     ).toBe(customStyledListItemOutput)
+  })
+
+  test.each(safeHrefs)('links safe href %s', (href, output) => {
+    expect(renderToHtml({ value: linkParagraph(href) })).toBe(output)
+  })
+
+  test.each(unsafeHrefs)('renders unsafe href %s as plain text', href => {
+    expect(renderToHtml({ value: linkParagraph(href) })).toBe('<p>click</p>')
   })
 })
