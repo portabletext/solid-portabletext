@@ -123,7 +123,7 @@ export interface PortableTextSolidComponents {
    * Can also be set to a single Solid component, which would handle block styles of _any_ type.
    */
   block:
-    | Record<PortableTextBlockStyle, PortableTextBlockComponent | undefined>
+    | Partial<Record<PortableTextBlockStyle, PortableTextBlockComponent | undefined>>
     | PortableTextBlockComponent
 
   /**
@@ -137,7 +137,7 @@ export interface PortableTextSolidComponents {
    * Can also be set to a single Solid component, which would handle lists of _any_ type.
    */
   list:
-    | Record<PortableTextListItemType, PortableTextListComponent | undefined>
+    | Partial<Record<PortableTextListItemType, PortableTextListComponent | undefined>>
     | PortableTextListComponent
 
   /**
@@ -149,7 +149,7 @@ export interface PortableTextSolidComponents {
    * Can also be set to a single Solid component, which would handle list items of _any_ type.
    */
   listItem:
-    | Record<PortableTextListItemType, PortableTextListItemComponent | undefined>
+    | Partial<Record<PortableTextListItemType, PortableTextListItemComponent | undefined>>
     | PortableTextListItemComponent
 
   /**

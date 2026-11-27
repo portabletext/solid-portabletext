@@ -101,3 +101,30 @@ export const customStyledListItemOutput = [
   '<li><p class="font-medium text-lg">Finally, enter your contact information and review your service appointment. You’re all set!</p></li>',
   '</ol>',
 ].join('')
+
+export function linkParagraph(href: string): PortableTextBlock {
+  return {
+    _type: 'block',
+    _key: 'link',
+    style: 'normal',
+    markDefs: [{ _type: 'link', _key: 'l', href }],
+    children: [{ _type: 'span', _key: 'a', text: 'click', marks: ['l'] }],
+  }
+}
+
+export const safeHrefs: [href: string, output: string][] = [
+  ['https://example.com/', '<p><a href="https://example.com/">click</a></p>'],
+  ['http://example.com/', '<p><a href="http://example.com/">click</a></p>'],
+  ['mailto:hi@example.com', '<p><a href="mailto:hi@example.com">click</a></p>'],
+  ['tel:+4712345678', '<p><a href="tel:+4712345678">click</a></p>'],
+  ['#section', '<p><a href="#section">click</a></p>'],
+  ['/docs', '<p><a href="/docs">click</a></p>'],
+  ['docs/page', '<p><a href="docs/page">click</a></p>'],
+]
+
+export const unsafeHrefs = [
+  'javascript:alert(1)',
+  ' JavaScript:alert(1)',
+  'data:text/html,hi',
+  'vbscript:msgbox(1)',
+]

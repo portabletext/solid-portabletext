@@ -1,4 +1,6 @@
+import { uriLooksSafe } from '@portabletext/toolkit'
 import type { TypedObject } from '@portabletext/types'
+import { Show } from 'solid-js'
 
 import type { PortableTextMarkComponent } from '../types'
 
@@ -8,7 +10,9 @@ interface DefaultLink extends TypedObject {
 }
 
 const link: PortableTextMarkComponent<DefaultLink> = props => (
-  <a href={props.value?.href}>{props.children}</a>
+  <Show when={uriLooksSafe(props.value?.href || '')} fallback={props.children}>
+    <a href={props.value?.href}>{props.children}</a>
+  </Show>
 )
 
 const underlineStyle = { textDecoration: 'underline' }
