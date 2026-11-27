@@ -138,14 +138,14 @@
     "jsdom": "^31.0.1",
     "oxfmt": "^0.80.0",
     "oxlint": "^1.95.0",
-    "oxlint-tsgolint": "^7.0.2008",
+    "oxlint-tsgolint": "^7.0.2009",
     "solid-js": "^1.9.20",
     "tsup": "^9.0.0",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "6.0.3",
-    "vite": "^8.3.8",
+    "vite": "^8.4.0",
     "vite-plugin-solid": "^2.11.17",
-    "vitest": "^5.1.1"
+    "vitest": "^5.1.2"
   },
   "peerDependencies": {
     "solid-js": "^1.6.0"
