@@ -126,7 +126,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@portabletext/toolkit": "^6.1.0",
+    "@portabletext/toolkit": "^6.1.1",
     "@portabletext/types": "^4.0.2"
   },
   "devDependencies": {

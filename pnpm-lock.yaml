@@ -186,8 +186,8 @@ importers:
   .:
     dependencies:
       '@portabletext/toolkit':
-        specifier: ^6.1.0
-        version: 6.1.0
+        specifier: ^6.1.1
+        version: 6.1.1
       '@portabletext/types':
         specifier: ^4.0.2
         version: 4.0.2
@@ -954,12 +954,16 @@ packages:
     resolution: {integrity: sha512-pOr5+q1fLYKwFN3LAJuGZEnfXDcQ73zqgDHMtGy+K+uIoUqyY+6MeDCWFwfu+4EFuq76I5EPFofoNAI+Bmmq4A==}
     engines: {node: '>=22.13'}
 
-  '@portabletext/toolkit@6.1.0':
-    resolution: {integrity: sha512-ncI1DwhFt0jTapTs4pQw8aRM6lUA90RSYs00WxDLqVAbX5doW7lWfZYw9SELqGtBYKD7l9T93edGuLaF5sXWog==}
+  '@portabletext/toolkit@6.1.1':
+    resolution: {integrity: sha512-W04MbBkgcbRVNW3/01rs6hKbpwiDgKw8w1AGouVwG/If4gW6yrPMeYVQ0K5UfOnZztMJ3DQJQZ5CUWZ+GsuOCQ==}
     engines: {node: '>=22.12'}
 
   '@portabletext/types@4.0.2':
     resolution: {integrity: sha512-djfIGU9n6DRrunlvj2nIDAp17URo/nA4jSXGvf+Gupx8NLLy9fmJBZ3GL8yhqn9lSVc+cKCharjOa3aOBnWbRw==}
+    engines: {node: '>=20.19 <22 || >=22.12'}
+
+  '@portabletext/types@4.0.3':
+    resolution: {integrity: sha512-jSCKrutPWitTg6gC9uf4qBbVjPZflFvZl2rSzqtMlypmP7AChg5ZJ2u4sDf2C9d9YyeTotqfT3sHZOoX1LlZIg==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
   '@rolldown/binding-android-arm-eabi@1.2.19':
@@ -2619,11 +2623,13 @@ snapshots:
 
   '@pnpm/deps.graph-sequencer@1100.0.1': {}
 
-  '@portabletext/toolkit@6.1.0':
+  '@portabletext/toolkit@6.1.1':
     dependencies:
-      '@portabletext/types': 4.0.2
+      '@portabletext/types': 4.0.3
 
   '@portabletext/types@4.0.2': {}
+
+  '@portabletext/types@4.0.3': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.19':
     optional: true
