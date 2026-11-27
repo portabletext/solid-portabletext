@@ -1,5 +1,15 @@
 # @portabletext/solid
 
+## 1.0.10
+
+### Patch Changes
+
+- [#83](https://github.com/portabletext/solid-portabletext/pull/83) [`9f5df07`](https://github.com/portabletext/solid-portabletext/commit/9f5df07e24d93acea2f8b267abc3d2fffd5ce0f8) Thanks [@stipsan](https://github.com/stipsan)! - Render links with unsafe hrefs, such as `javascript:` URLs, as plain text instead of an `<a>` element. Only `http`, `https`, `mailto`, `tel`, `#`, `/` and relative URLs are linked. Also updates `@portabletext/toolkit` to v6 and `@portabletext/types` to v4.
+
+- [#82](https://github.com/portabletext/solid-portabletext/pull/82) [`f89fd3c`](https://github.com/portabletext/solid-portabletext/commit/f89fd3cbc9f6a012ba47094d7ae8b68737009c3b) Thanks [@christianhg](https://github.com/christianhg)! - fix: list `portable-text` in the npm keywords of @portabletext/solid
+
+  npm search and keyword filters now find it under `portable-text`.
+
 ## 1.0.9
 
 ### Patch Changes
